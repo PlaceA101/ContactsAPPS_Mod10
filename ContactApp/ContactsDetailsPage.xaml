@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ContactApp.ViewModels"
+             x:Class="ContactApp.ContactsDetailsPage"
+             Title="Contact Details">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Name" FontAttributes="Bold" />
+            <Label Text="{Binding SelectedContact.Name}" FontSize="20" />
+
+            <Label Text="Email" FontAttributes="Bold" />
+            <Label Text="{Binding SelectedContact.Email}" FontSize="18" />
+
+            <Label Text="Phone Number" FontAttributes="Bold" />
+            <Label Text="{Binding SelectedContact.Phone}" FontSize="18" />
+
+            <Label Text="Description" FontAttributes="Bold" />
+            <Label Text="{Binding SelectedContact.Description}" FontSize="18" LineBreakMode="WordWrap" />
+
+            <Button Text="Back to Contacts" Command="{Binding GoToAddContactCommand}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
